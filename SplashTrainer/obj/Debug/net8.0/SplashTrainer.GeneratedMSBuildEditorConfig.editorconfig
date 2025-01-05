@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SplashTrainer
+build_property.RootNamespace = SplashTrainer
+build_property.ProjectDir = D:\gabri\SplashTrainer2.0 — kopia\SplashTrainer\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\gabri\SplashTrainer2.0 — kopia\SplashTrainer
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/ActivityLog/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpdHlMb2dcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/ActivityLog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpdHlMb2dcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/Shared/_ExerciseListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FeGVyY2lzZUxpc3RQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/SwimmingExercise/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dpbW1pbmdFeGVyY2lzZVxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/SwimmingExercise/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dpbW1pbmdFeGVyY2lzZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/SwimmingExercise/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dpbW1pbmdFeGVyY2lzZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/SwimmingExercise/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dpbW1pbmdFeGVyY2lzZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/SwimmingPlan/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dpbW1pbmdQbGFuXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/SwimmingPlan/GeneratePlan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dpbW1pbmdQbGFuXEdlbmVyYXRlUGxhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/SwimmingPlan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dpbW1pbmdQbGFuXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/gabri/SplashTrainer2.0 — kopia/SplashTrainer/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-q7z0jsr62x

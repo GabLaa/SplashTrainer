@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SplashTrainer.Models.SwimmingExercise>
+
+<table class="table table-striped table-bordered">
+   
+    <tbody>
+        @foreach (var exercise in Model)
+        {
+            <tr>
+                <td>@exercise.Name</td>
+                <td>@exercise.Distance</td>
+                <td>@exercise.Category</td>
+                <td>@exercise.Style</td>
+                <td>@exercise.Level</td>
+                <td>  <button class="btn btn-info" onclick="loadDetails(@exercise.Id)">Szczegóły</button></td>
+                <td>
+                    @if(!exercise.IsDefault)  
+                    {
+                    <button class="btn btn-danger" onclick="loadDeleteModal(@exercise.Id)">Usuń</button>
+                    }
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

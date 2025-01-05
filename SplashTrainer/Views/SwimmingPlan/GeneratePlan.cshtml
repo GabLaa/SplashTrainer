@@ -1,0 +1,80 @@
+﻿@model SplashTrainer.Models.GeneratePlanViewModel
+
+@{
+    ViewData["Title"] = "Generowanie planu treningowego";
+}
+<link href="/css/SwimmingPlan/Generate.css" rel="stylesheet" />
+
+<h1>Wygeneruj swój plan treningowy</h1>
+
+<form method="post" class="form-one" action="@Url.Action("GeneratePlan")">
+
+    <div class="form-group">
+        <label asp-for="Name" class="form-label">Nazwa planu:</label>
+        <input asp-for="Name" class="form-control" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+        <div class="form-group">
+        <label asp-for="Goal" class="form-label">Cel treningu:</label>
+        <select asp-for="Goal" class="form-control" required>
+            <option value="Nogi">Nogi</option>
+            <option value="Ręce">Ręce</option>
+            <option value="Koordynacja">Koordynacja</option>
+            <option value="Wytrzymałość">Wytrzymałość</option>
+            <option value="Szybkość">Szybkość</option>
+        </select>
+        <span asp-validation-for="Goal" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Level" class="form-label">Poziom trudności:</label>
+        <select asp-for="Level" class="form-control" required>
+            <option value="Początkujący">Początkujący</option>
+            <option value="Zaawansowany">Zaawansowany</option>
+        </select>
+        <span asp-validation-for="Level" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Style" class="form-label">Styl pływania:</label>
+        <select asp-for="Style" class="form-control"  required>
+            <option value="Grzbiet">Grzbiet</option>
+            <option value="Kraul">Kraul</option>
+            <option value="Żaba">Żaba</option>
+            <option value="Delfin">Delfin</option>
+        </select>
+        <span asp-validation-for="Style" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MinDistancePerTraining" class="form-label">Dystans na treningu (metry) :</label>
+        <input asp-for="MinDistancePerTraining" class="form-control" type="number" required />
+        <span asp-validation-for="MinDistancePerTraining" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WeeklyTrainingDays" class="form-label">Ilość treningów w tygodniu:</label>
+        <select asp-for="WeeklyTrainingDays" class="form-control" required>
+            <option value="1">1 dzień w tygodniu</option>
+            <option value="2">2 dni w tygodniu</option>
+            <option value="3">3 dni w tygodniu</option>
+            <option value="4">4 dni w tygodniu</option>
+            <option value="5">5 dni w tygodniu</option>
+            <option value="6">6 dni w tygodniu</option>
+            <option value="7">7 dni w tygodniu</option>
+        </select>
+        <span asp-validation-for="WeeklyTrainingDays" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PlanDurationWeeks" class="form-label">Długość planu (w tygondiach) :</label>
+        <input asp-for="PlanDurationWeeks" class="form-control" type="number" min="1" max="7" required />
+        <span asp-validation-for="PlanDurationWeeks" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-gradient-blue">Generuj plan</button>
+</form>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })

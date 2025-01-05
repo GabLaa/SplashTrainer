@@ -1,0 +1,215 @@
+﻿
+
+.header {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    color: #0056B3;
+}
+
+
+h5 {
+    font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.text-center.mb-5 h5 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* Tabela */
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+    .table thead th {
+        background-color: #006DFF;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        border: none; 
+        font-weight: bold;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f0f8ff; /* Lekko niebieski kolor */
+        background-color: #E3F2FD;
+        transition: background-color 0.3s ease;
+    }
+
+    .table td {
+        border: none; 
+        text-align: center;
+        padding: 18px;
+    }
+
+    .table tbody tr {
+        border-bottom: 1px solid #ddd; /* Dodanie linii poziomej */
+    }
+
+
+
+/* Kwadraty */
+
+/* Stylizacja przycisków */
+.button-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Odstępy między przyciskami */
+}
+
+    .button-grid button {
+        width: 150px; /* Stała szerokość */
+        height: 100px; /* Stała wysokość */
+        background: linear-gradient(135deg, #006DFF, #0055CC);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+        .button-grid button:hover {
+            background: linear-gradient(135deg, #0055CC, #006DFF);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+.btn:hover {
+    color: white;
+}
+
+/* Zielony przycisk */
+.btn-gradient-green {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+    .btn-gradient-green:hover {
+        background: linear-gradient(135deg, #218838, #28a745);
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+/* Niebieski przycisk */
+.btn-gradient-blue {
+    background: linear-gradient(135deg, #0056b3, #006dff);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+    .btn-gradient-blue:hover {
+        background: linear-gradient(135deg, #006dff, #0056b3);
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+.btn-gradient-red {
+    background: linear-gradient(135deg, #dc3545, #b21f29);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+    .btn-gradient-red:hover {
+        background: linear-gradient(135deg, #b21f29, #dc3545);
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+.btn-gradient-grey {
+    background: linear-gradient(135deg, #b0b0b0, #808080);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+    .btn-gradient-grey:hover {
+        background: linear-gradient(135deg, #808080, #b0b0b0);
+        color: white;
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+.btn-info {
+
+    background: linear-gradient(135deg, #0056b3, #006dff);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #006dff, #0056b3);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #b0b0b0, #808080);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #808080, #b0b0b0);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+    .btn-danger {
+    background: linear-gradient(135deg, #dc3545, #b21f29);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #b21f29, #dc3545);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+

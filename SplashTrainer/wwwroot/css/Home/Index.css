@@ -1,0 +1,91 @@
+﻿/* Styl ogólny */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F6F6F6;
+    color: #333;
+}
+
+
+/* Nagłówki */
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+
+/* Gradientowe przyciski */
+/* Przyciski ogólne */
+.btn-gradient {
+    background: linear-gradient(135deg, #0056B3, #007BFF);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px; /* Większy tekst dla wyróżnienia */
+    font-weight: 600;
+    border-radius: 12px; /* Zaokrąglony kształt */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Cień dla podkreślenia */
+    transition: all 0.3s ease-in-out;
+}
+
+    .btn-gradient:hover {
+        background: linear-gradient(135deg, #007BFF, #0056B3);
+        color: white;
+        transform: scale(1.04); /* Powiększenie przycisku */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Wyraźniejszy cień */
+    }
+
+    /* Efekt świetlny na hover */
+    .btn-gradient::after {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.2);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .btn-gradient:hover::after {
+        opacity: 1; /* Dodanie lekkiego efektu świetlnego */
+    }
+
+/* Dostosowanie tylko do sekcji CTA */
+.container-fluid .btn-gradient {
+    font-size: 20px; /* Większy tekst dla większego znaczenia */
+    padding: 20px 40px; /* Większy przycisk */
+}
+
+
+
+/* Karty */
+
+.card {
+    border: 1px solid rgba(0, 86, 179, 0.2); /* Subtelny obrys w kolorze głównym */
+    border-radius: 12px; /* Nieco większe zaokrąglenie */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Bardziej wyrazisty cień */
+    transition: all 0.3s ease-in-out;
+}
+
+    .card:hover {
+        border-color: #0056B3;
+        transform: translateY(-10px); /* Większe uniesienie na hover */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8); /* Wyraźniejszy cień podczas hover */
+    }
+
+/* Ikony */
+.icon {
+    transition: color 0.3s ease-in-out;
+}
+
+.card:hover .icon {
+    color: #007BFF;
+}
+
+/* CTA sekcja */
+.container-fluid {
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}

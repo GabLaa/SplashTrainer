@@ -1,0 +1,106 @@
+﻿@model IEnumerable<SplashTrainer.Models.SwimmingExercise>
+
+@{
+    ViewData["Title"] = "Katalog ćwiczeń";
+}
+
+<link href="/css/SwimmingExercise/Index.css" rel="stylesheet" />
+
+
+<h1 class="text-center header mb-5">Katalog ćwiczeń</h1>
+
+<!-- Sekcja stylów -->
+<div class="text-center mb-5">
+    <h5>Wybierz styl pływacki:</h5>
+    <div class ="button-grid">
+        @foreach (var style in new[] { "Grzbiet", "Kraul", "Żaba", "Delfin" })
+        {
+            <button  onclick="selectStyle('@style')">@style</button>
+        }
+    </div>
+</div>
+
+<!-- Sekcja kategorii -->
+<div id="categoriesSection" class="text-center mb-5" style="display: none;">
+    <h5>Wybierz kategorię:</h5>
+    <div class="button-grid">
+        @foreach (var category in new[] { "Nogi", "Ręce", "Koordynacja", "Wytrzymałość", "Szybkość" })
+        {
+            <button onclick="selectCategory('@category')">@category</button>
+        }
+    </div>
+</div>
+
+<!-- Sekcja tabeli ćwiczeń -->
+<div id="exercisesSection" style="display: none;">
+    <h5>Lista ćwiczeń:</h5>
+    <button class="btn btn-gradient-green mb-3" onclick="window.location.href='/SwimmingExercise/Add'">Dodaj nowe ćwiczenie</button>
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Dystans (m)</th>
+                <th>Kategoria</th>
+                <th>Styl</th>
+                <th>Poziom</th>
+                <th>Opis</th>
+                <th>Opcje</th>
+            </tr>
+        </thead>
+        <tbody id="exerciseList">
+            <!-- Tutaj zostaną załadowane dane -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal szczegółów -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="detailsModalLabel">Szczegóły ćwiczenia</h5>
+                
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+            </div>
+            <div class="modal-body" id="detailsModalContent">
+                <!-- Szczegóły zostaną załadowane dynamicznie -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal dla delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Potwierdzenie usunięcia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+            </div>
+            <div class="modal-body">
+                <p id="deleteConfirmationText">Czy na pewno chcesz usunąć to ćwiczenie?</p>
+                <div id="deleteConfirmationMessage" class="alert alert-success d-none">
+                    Ćwiczenie zostało pomyślnie usunięte!
+                </div>
+            </div>
+            <div class="modal-footer" id="deleteModalFooter">
+                <button type="button" class="btn btn-gradient-grey" data-bs-dismiss="modal" id="cancelButton">Anuluj</button>
+                <button type="button" class="btn btn-gradient-red" id="confirmDeleteButton">Usuń</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Skrypt -->
+@section Scripts {
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            submitAddForm();
+        });
+    </script>
+
+}
+

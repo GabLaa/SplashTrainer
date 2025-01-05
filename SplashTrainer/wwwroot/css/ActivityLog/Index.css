@@ -1,0 +1,164 @@
+﻿/* Styl dla nagłówka */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    color: #0056B3;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+}
+
+/* Nagłówek strony */
+.page-header {
+    color: #003865;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Styl dla tabeli */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom:50px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 109, 255, 0.4);
+    border: 2px solid #E3F2FD;
+    background-color: white;
+}
+
+/* Gradient w tabeli */
+.table-gradient {
+    background: linear-gradient(135deg, #0056b3, #3399ff);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table thead th {
+    background-color: #006DFF; 
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #E3F2FD;
+    font-weight: bold;
+}
+
+
+.table tbody tr:hover {
+    background-color: #f0f8ff; /* Lekko niebieski kolor */
+    background-color: #E3F2FD;
+    transition: background-color 0.3s ease;
+}
+
+    .table td {
+        text-align: center;
+        padding: 18px;
+    }
+
+/* Przyciski */
+
+.btn:hover{
+    color:white;
+}
+
+.btn-gradient-blue {
+    background: linear-gradient(135deg, #006DFF, #0055CC);
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+    .btn-gradient-blue:hover {
+        color: white;
+        background: linear-gradient(135deg, #0055CC, #006DFF);
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+.btn-gradient-red {
+    background: linear-gradient(135deg, #dc3545, #b21f29);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+    .btn-gradient-red:hover {
+        background: linear-gradient(135deg, #b21f29, #dc3545);
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+.btn-gradient-grey {
+    background: linear-gradient(135deg, #b0b0b0, #808080);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+    .btn-gradient-grey:hover {
+        background: linear-gradient(135deg, #808080, #b0b0b0);
+        color: white;
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+
+
+
+
+
+/* Stylizacja tabeli */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Cienie na kontenerze */
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Modale */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(to bottom right, #D7EAF3, #FFFFFF);
+    z-index: -1;
+}
+

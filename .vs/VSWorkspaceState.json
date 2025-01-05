@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SplashTrainer",
+    "\\SplashTrainer\\Migrations",
+    "\\SplashTrainer\\Views",
+    "\\SplashTrainer\\Views\\Home",
+    "\\SplashTrainer\\Views\\Shared",
+    "\\SplashTrainer\\wwwroot",
+    "\\SplashTrainer\\wwwroot\\css",
+    "\\SplashTrainer\\wwwroot\\css\\SwimmingExercise",
+    "\\SplashTrainer\\wwwroot\\css\\SwimmingPlan"
+  ],
+  "SelectedNode": "\\SplashTrainer\\Data\\ApplicationDbContext.cs",
+  "PreviewInSolutionExplorer": false
+}

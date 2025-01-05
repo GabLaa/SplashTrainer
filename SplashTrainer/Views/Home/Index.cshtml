@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Strona główna";
+}
+
+<link href="~/css/Home/Index.css" rel="stylesheet" />
+
+
+<div class="container-fluid text-center text-white py-5" style="background: linear-gradient(135deg, #0056B3, #007BFF);">
+    <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInDown">Witaj w SplashTrainer!</h1>
+    <p class="lead mb-4 animate__animated animate__fadeInUp">Zaplanuj treningi pływackie, monitoruj swoje postępy i osiągaj cele – wszystko w jednym miejscu!</p>
+</div>
+
+
+<!-- Sekcja funkcjonalności -->
+<div class="container my-5">
+    <h2 class="text-center fw-bold mb-5 animate__animated animate__fadeInUp" style="color: #333;">Dlaczego SplashTrainer?</h2>
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 hover-card animate__animated animate__fadeInLeft">
+                <div class="card-body text-center">
+                    <div class="icon mb-3" style="font-size: 50px; color: #0056B3;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h5 class="card-title fw-bold mb-3">Monitoruj swoje postępy</h5>
+                    <p class="card-text">Zapisuj treningi i analizuj swoje wyniki, aby efektywnie osiągać kolejne poziomy.</p>
+                    <a asp-controller="ActivityLog" asp-action="Index" class="btn btn-gradient">Zobacz dziennik</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 hover-card animate__animated animate__fadeInUp">
+                <div class="card-body text-center">
+                    <div class="icon mb-3" style="font-size: 50px; color: #0056B3;">
+                        <i class="fas fa-swimmer"></i>
+                    </div>
+                    <h5 class="card-title fw-bold mb-3">Wygeneruj plan treningowy</h5>
+                    <p class="card-text">Twórz indywidualne plany treningowe dopasowane do Twoich potrzeb i celów.</p>
+                    <a asp-controller="SwimmingPlan" asp-action="Index" class="btn btn-gradient">Wygeneruj plan</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 hover-card animate__animated animate__fadeInRight">
+                <div class="card-body text-center">
+                    <div class="icon mb-3" style="font-size: 50px; color: #0056B3;">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h5 class="card-title fw-bold mb-3">Dodawaj swoje ćwiczenia</h5>
+                    <p class="card-text">Wzbogacaj katalog ćwiczeń swoimi propozycjami i personalizuj swoje plany treningowe.</p>
+                    <a asp-controller="SwimmingExercise" asp-action="Add" class="btn btn-gradient">Dodaj ćwiczenie</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sekcja CTA -->
+<div class="container-fluid text-center text-white py-5" style="background: linear-gradient(135deg, #0056B3, #007BFF);">
+    <h2 class="fw-bold mb-4">Dołącz do naszej społeczności pływaków!</h2>
+    <p class="lead mb-4">Nie czekaj – zacznij swoją przygodę już dziś i osiągaj swoje sportowe cele!</p>
+    <a href="#" type="button" class="btn btn-gradient btn-lg px-5">Zarejestruj się</a>
+</div>
+
+
+
+

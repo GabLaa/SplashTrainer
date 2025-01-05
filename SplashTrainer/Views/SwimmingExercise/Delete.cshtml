@@ -1,0 +1,23 @@
+﻿@model SplashTrainer.Models.SwimmingExercise
+
+<h1>Usuń ćwiczenie</h1>
+
+<p>Czy na pewno chcesz usunąć to ćwiczenie?</p>
+
+<div>
+    <p><strong>Nazwa:</strong> @Model.Name</p>
+    <p><strong>Opis:</strong> @Model.Description</p>
+    <p><strong>Styl:</strong> @Model.Style</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

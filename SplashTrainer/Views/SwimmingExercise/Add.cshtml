@@ -1,0 +1,76 @@
+﻿@model SplashTrainer.Models.SwimmingExercise
+
+@{
+    ViewData["Title"] = "Dodaj ćwiczenie";
+}
+
+<link href="/css/SwimmingExercise/Add.css" rel="stylesheet" />
+
+<h1 class="header">Dodaj nowe ćwiczenie</h1>
+
+<form id="addExerciseForm" class="form-one" method="post" asp-action="Add" asp-controller="SwimmingExercise">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Nazwa</label>
+        <input asp-for="Name" class="form-control custom-input" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Distance" class="form-label">Dystans (m)</label>
+        <input asp-for="Distance" class="form-control custom-input" type="number" />
+        <span asp-validation-for="Distance" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Category" class="form-label">Kategoria</label>
+        <select asp-for="Category" class="form-select custom-select">
+            <option value="">Wybierz kategorię</option>
+            <option value ="Nogi">Nogi</option>
+            <option value ="Ręce">Ręce</option>
+            <option value ="Koordynacja">Koordynacja</option>
+            <option value ="Wytrzymałość">Wytrzymałość</option>
+            <option value ="Szybkość">Szybkość</option>
+        </select>
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Style" class="form-label">Styl</label>
+        <select asp-for="Style" class="form-select custom-select">
+        <option value="Grzbiet">Grzbiet</option>
+        <option value="Kraul">Kraul</option>
+        <option value="Żaba">Żaba</option>
+        <option value="Delfin">Delfin</option>
+        </select>
+        <span asp-validation-for="Style" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Level" class="form-label">Poziom</label>
+        <select asp-for="Level" class="form-select custom-select">
+            <option value="">Wybierz poziom</option>
+            <option value="Początkujący">Początkujący</option>
+            <option value="Zaawansowany">Zaawansowany</option>
+        </select>
+        <span asp-validation-for="Level" class="text-danger"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Opis</label>
+        <textarea asp-for="Description" class="form-control custom-input"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-gradient-green">Dodaj</button>
+    <a asp-action="Index" class="btn btn-gradient-grey">Anuluj</a>
+</form>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+

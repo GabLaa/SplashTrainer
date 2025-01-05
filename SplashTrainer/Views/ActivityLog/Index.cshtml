@@ -1,0 +1,159 @@
+﻿@model List<SplashTrainer.Models.SwimmingPlan>
+
+@{
+    ViewData["Title"] = "Moje plany treningowe";
+  
+}
+
+<link href="/css/ActivityLog/Index.css" rel="stylesheet" />
+
+
+<div class="animated-background"></div>
+
+<h1>Moje plany treningowe</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nazwa planu</th>
+            <th>Data utworzenia</th>
+            <th>Szczegóły planu</th>
+            <th>Opcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var plan in Model)
+        {
+            
+            <tr>
+                <td>@plan.Name</td>
+                <td>@plan.DateCreated.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@plan.Id" class="btn btn btn-gradient-blue">Szczegóły</a>
+                </td>
+                <td>
+                    <button class="btn btn-gradient-blue" data-bs-toggle="modal" data-bs-target="#editPlanModal" data-plan-id="@plan.Id" data-plan-name="@plan.Name">Edytuj nazwę</button>
+                    <button class="btn btn-gradient-red" data-bs-toggle="modal" data-bs-target="#deleteModal" data-plan-id="@plan.Id">Usuń</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal dla delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Potwierdzenie usunięcia planu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+            </div>
+            <div class="modal-body">
+                <p id="deleteConfirmationText">Czy na pewno chcesz usunąć plan treningowy?</p>
+            </div>
+            <div class="modal-footer" id="deleteModalFooter">
+                <button type="button" class="btn btn-gradient-grey" data-bs-dismiss="modal">Anuluj</button>
+                <button type="button" class="btn  btn-gradient-red" id="confirmDeleteButton">Usuń</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal do edycji nazwy planu -->
+<div class="modal fade" id="editPlanModal" tabindex="-1" aria-labelledby="editPlanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPlanModalLabel">Edytuj nazwę planu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+            </div>
+            <div class="modal-body">
+                <label for="planName">Nazwa planu:</label>
+                <input type="text" id="planName" class="form-control" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-gradient-grey" data-bs-dismiss="modal">Anuluj</button>
+                <button type="button" class="btn btn-gradient-blue" id="saveChangesButton">Zapisz zmiany</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        @section Scripts {
+            <script>
+
+                ////// Usuwanie planu
+                var planIdToDelete;
+
+                // Przypisz planId do zmiennej, kiedy użytkownik kliknie "Usuń"
+                $('#deleteModal').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget); // Przycisk, który otworzył modal
+                    planIdToDelete = button.data('plan-id'); // Przechowaj ID planu
+
+                    // Zmieniamy tekst potwierdzenia, aby wskazywał nazwę planu
+                    $('#deleteConfirmationText').text(`Czy na pewno chcesz usunąć plan treningowy ${button.closest('.plan-entry').find('h4').text()}?`);
+                });
+
+                // Potwierdzenie usunięcia
+                $('#confirmDeleteButton').click(function () {
+                    $.ajax({
+                        url: '@Url.Action("Delete", "ActivityLog")',
+                        type: 'DELETE',
+                        data: { id: planIdToDelete },
+                        success: function (data) {
+                            if (data.success) {
+                                location.reload(); // Przeładuj stronę, aby odświeżyć listę planów
+                            } else {
+                                alert(data.message);
+                            }
+                        }
+                    });
+                });
+
+                ///// Edytowanie nazwy
+                var planIdToEdit;
+
+                // Przypisz planId do zmiennej, kiedy użytkownik kliknie "Edytuj nazwę"
+                $('#editPlanModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Przycisk, który otworzył modal
+                planIdToEdit = button.data('plan-id'); // Przechowaj ID planu
+                var planName = button.data('plan-name'); // Pobierz nazwę planu
+                $('#planName').val(planName);  // Ustaw nazwę planu w polu tekstowym
+                });
+
+               // Zapisz zmiany w nazwie planu
+               $('#saveChangesButton').click(function () {
+               var newPlanName = $('#planName').val();  // Pobierz zmodyfikowaną nazwę planu
+
+               $.ajax({
+                url: '@Url.Action("EditPlanName", "ActivityLog")',
+                type: 'POST',
+                data: {
+                    id: planIdToEdit,
+                    planName: newPlanName
+                },
+                success: function (data) {
+                    if (data.success) {
+                        $('#editPlanModal').modal('hide');
+                        location.reload();  // Odśwież stronę po zapisaniu zmian
+                    } else {
+                        alert(data.message);  // W przypadku błędu wyświetl wiadomość
+                    }
+                },
+                error: function () {
+                    alert("Wystąpił błąd podczas zapisywania zmian.");
+                }
+            });
+        });
+
+  </script>
+        }
+
+
+
+
+
+

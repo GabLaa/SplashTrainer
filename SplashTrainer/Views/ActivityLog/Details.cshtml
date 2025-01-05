@@ -1,0 +1,165 @@
+﻿@model SplashTrainer.Models.SwimmingPlan
+
+@{
+    ViewData["Title"] = "Szczegóły planu treningowego";
+}
+
+<link href="~/css/ActivityLog/Details.css" rel="stylesheet" />
+
+
+<div class="row">
+    <!-- Sekcja po lewej: Ćwiczenia i łączny dystans -->
+    <div class="col-md-8">
+        <h2 class="section-title animate__animated animate__fadeInUp">@Model.Name</h2>
+        <h5 class="total-distance animate__animated animate__fadeInUp">
+            Łączny dystans planu: <strong>@Model.TotalDistance m</strong>
+        </h5>
+        <a href="@Url.Action("GeneratePdf", "ActivityLog", new { planId = Model.Id })" class="btn btn-gradient-blue animate__animated animate__fadeIn pdf">
+            Pobierz PDF
+        </a>
+    </div>
+
+    <!-- Sekcja po prawej: Pasek postępu -->
+    <div class="col-md-4">
+        <div class="progress-box animate__animated animate__fadeIn">
+            <h4>Twój postęp w planie: <strong id="progressText">@((double)ViewData["Progress"])%</strong></h4>
+            <p>Ukończono <span id="completedTrainings">@ViewData["CompletedTrainings"]</span> z @ViewData["TotalTrainings"] treningów.</p>
+            <div class="progress-bar-wrapper">
+                <div id="progressBar" class="progress-bar-fill" style="width: @((double)ViewData["Progress"])%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="fixed-button">
+    <a href="@Url.Action("Index", "ActivityLog")" class="btn btn-gradient-blue btn-lg">
+        Powrót do listy
+    </a>
+</div>
+
+
+<!-- Tabela ćwiczeń na pełną szerokość -->
+<div class="exercises-wrapper">
+    @foreach (var trainingGroup in ViewData["ExercisesGroupedByTraining"] as List<IGrouping<string, PlanExercise>>)
+    {
+        var totalDayDistance = trainingGroup.Sum(e => e.Distance);
+         <h4 class="training-header">@trainingGroup.Key | Dystans: @totalDayDistance (m)</h4>
+       
+        var isCompleted = trainingGroup.All(e => e.IsCompleted);
+
+        @if (!isCompleted)
+        {
+            <form method="post" asp-action="MarkTrainingAsCompleted" asp-controller="ActivityLog" class="training-form">
+                <input type="hidden" name="trainingId" value="@trainingGroup.First().Id" />
+                <button type="submit" class="btn btn-gradient-green mark-completed-button">Zaznacz jako zrobione</button>
+            </form>
+        }
+        else
+        {
+            <span class="text-success justify-content-end">Zrobione ✅</span>
+        }
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Ćwiczenie</th>
+                    <th>Dystans (m)</th>
+                    <th>Poziom</th>
+                    <th>Styl</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var planExercise in trainingGroup)
+                {
+                    <tr>
+                        <td>@planExercise.SwimmingExercise.Name</td>
+                        <td>@planExercise.SwimmingExercise.Distance m</td>
+                        <td>@planExercise.SwimmingExercise.Level</td>
+                        <td>@planExercise.SwimmingExercise.Style</td>
+                        <td>
+                            <button class="btn btn-gradient-blue" data-bs-toggle="modal" data-bs-target="#exerciseDetailsModal" data-description="@planExercise.SwimmingExercise.Description">
+                                Szczegóły
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+<!-- Modal dla szczegółów ćwiczenia -->
+<div class="modal fade" id="exerciseDetailsModal" tabindex="-1" aria-labelledby="exerciseDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exerciseDetailsModalLabel">Szczegóły ćwiczenia</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Zamknij"></button>
+            </div>
+            <div class="modal-body">
+                <p id="exerciseDescription">Brak opisu.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-gradient-grey" data-bs-dismiss="modal">Zamknij</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts {
+
+    <script>
+        $('#exerciseDetailsModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Przycisk otwierający modal
+            var description = button.data('description'); // Pobranie opisu ćwiczenia
+            $('#exerciseDescription').text(description); // Wypełnienie modalnego okna
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Pobranie wartości procentowej z serwera
+            const progressPercentage = @((double)ViewData["Progress"]);
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+
+            // Pobranie bieżącej wartości z atrybutu aria-valuenow
+            let currentProgress = parseFloat(progressBar.getAttribute('aria-valuenow')) || 0;
+
+            const step = 1; // Skok w procentach
+            const interval = 30; // Czas w milisekundach między krokami
+
+            // Funkcja do animowania postępu
+            function animateProgress() {
+                if (currentProgress < progressPercentage) {
+                    currentProgress += step;
+                    if (currentProgress > progressPercentage) {
+                        currentProgress = progressPercentage; // Upewnij się, że nie przekracza docelowej wartości
+                    }
+                    progressBar.style.width = currentProgress + '%';
+                    progressBar.textContent = currentProgress.toFixed(0) + '% ukończone';
+                    progressText.textContent = currentProgress.toFixed(0) + '%';
+                    setTimeout(animateProgress, interval);
+                } else {
+                    // Ustawienie dokładnej wartości docelowej na końcu
+                    progressBar.style.width = progressPercentage + '%';
+                    progressBar.textContent = progressPercentage.toFixed(0) + '% ukończone';
+                    progressText.textContent = progressPercentage.toFixed(0) + '%';
+                    progressBar.setAttribute('aria-valuenow', progressPercentage); // Aktualizacja aria-valuenow
+                }
+            }
+
+            // Rozpoczęcie animacji
+            animateProgress();
+        });
+    </script>
+
+
+}

@@ -1,0 +1,25 @@
+﻿@model SplashTrainer.Models.SwimmingPlan
+
+@{
+    ViewData["Title"] = "Szczegóły planu treningowego";
+}
+
+<link href="/css/SwimmingPlan/Details.css" rel="stylesheet" />
+
+
+
+    <div class="success-container">
+        <div class="success-box">
+            <h1>Twój plan treningowy został wygenerowany!</h1>
+            <p>
+                Plan <strong>"@ViewData["PlanName"]"</strong> został pomyślnie utworzony
+                <br>w dniu <strong>@ViewData["DateCreated"]</strong>.
+            </p>
+            <p class="cta-text">
+                Aby zobaczyć szczegóły planu i monitorować swoje postępy, przejdź do zakładki "Dziennik aktywności".</a>.
+            </p>
+        <a href="/ActivityLog" class="btn-bounce">Przejdź do historii</a>
+        </div>
+    </div>
+
+

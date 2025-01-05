@@ -1,0 +1,169 @@
+﻿/* Stylizacja nagłówków */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0); /* Kolor główny */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+
+.section-subtitle {
+    font-size: 1.8rem;
+    color: #0055CC; /* Przyciemniony kolor główny */
+    margin-top: 10px;
+}
+
+.total-distance strong {
+  /* Kolor główny */
+    font-size: 1.2rem;
+}
+
+/* Pasek postępu */
+.progress-box {
+    border: 2px solid #28a745; /* Zielony akcent */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+    .progress-box:hover {
+        transform: scale(1.05);
+    }
+
+.progress-bar-wrapper {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar-fill {
+    background-color: #28a745; /* Kolor główny */
+    height: 100%;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Tabela ćwiczeń */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+    .styled-table th,
+    .styled-table td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .styled-table th {
+        background-color: #006DFF; /* Kolor główny */
+        color: #ffffff;
+    }
+
+    .styled-table tr:hover {
+        background-color: rgba(0, 109, 255, 0.1);
+    }
+
+/* Przyciski */
+
+.btn{
+    color:white;
+}
+
+.btn-gradient-blue {
+    background: linear-gradient(135deg, #006DFF, #0055CC);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+    .btn-gradient-blue:hover {
+        color: white;
+        background: linear-gradient(135deg, #0055CC, #006DFF);
+        transform: scale(1.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+.btn-gradient-green {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: white;
+    margin-bottom: 10px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+    .btn-gradient-green:hover {
+        color: white;
+        background: linear-gradient(135deg, #218838, #28a745);
+        transform: scale(1.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+.btn-gradient-grey {
+    background: linear-gradient(135deg, #b0b0b0, #808080);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+    .btn-gradient-grey:hover {
+        background: linear-gradient(135deg, #808080, #b0b0b0);
+        color: white;
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+.pdf {
+    color: white;
+    margin-bottom: 30px;
+}
+
+
+.training-header {
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-bottom   : 10px;
+    color: black;
+}
+
+
+/* Przyklejony przycisk w prawym dolnym rogu */
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+    .fixed-button .btn {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+    }
+
+        .fixed-button .btn:hover {
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
